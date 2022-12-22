@@ -18,6 +18,7 @@ class top_bar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: primary_color.withOpacity(0.01),
       body: Column( children: [
         Container(
             height: 85,

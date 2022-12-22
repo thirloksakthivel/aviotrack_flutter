@@ -13,14 +13,21 @@ class dashboard_pc extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: primary_color.withOpacity(0.3),
         body: HStack([
       side_nav().w(290).h(1000),
       VStack([
         top_bar().w(1242).h(90).pOnly(top: 5, left: 4),
+        Container(
+          height: 30,
+          width: 80,
+          decoration: BoxDecoration(border: Border.all(color: Colors.transparent),borderRadius: BorderRadius.circular(50),color: primary_color.withOpacity(0.9)),
+          child: Text('Hello, Guest !',style: GoogleFonts.poppins(fontSize: 10,color: Colors.white),).centered(),
+        ).pOnly(left: 30,top: 15),
         Text(
           'Tracking Results',
           style: GoogleFonts.poppins(fontSize: 24, color: primary_color),
-        ).pOnly(top: 22, left: 30),
+        ).pOnly(top: 12, left: 30),
         Text(
           'To track your consignment please enter any combination of up to 25 AVIOTRACK tracking numbers :',
           style: GoogleFonts.poppins(fontSize: 15, color: Colors.black),
@@ -63,7 +70,7 @@ class dashboard_pc extends StatelessWidget {
                     borderSide: BorderSide(width: 3, color: Colors.white),
                     borderRadius: BorderRadius.circular(15),
                   ),
-                  hintText: "Consignment / Refernce Number",
+                  hintText: "Consignment / Reference Number",
                 ),
                 style: TextStyle(),
                 maxLines: 7,
@@ -83,7 +90,7 @@ class dashboard_pc extends StatelessWidget {
         ).pOnly(top: 20, left: 30),
         HStack([
           Text('BEWARE OF FRAUD CALLS. ',style: GoogleFonts.poppins(color: Colors.red,fontSize: 15)),
-          Text('DTDC ',style: GoogleFonts.poppins(fontSize: 15)),
+          Text('AVIOTRACK ',style: GoogleFonts.poppins(fontSize: 15)),
           Text('won\'t',style: GoogleFonts.poppins(color: Colors.red,fontSize: 15)),
           Text('ask for any payment thru',style: GoogleFonts.poppins(fontSize: 15)),
           Text(' OTP/UPI',style: GoogleFonts.poppins(color: Colors.red,fontSize: 15))
@@ -102,7 +109,18 @@ class dashboard_pc extends StatelessWidget {
             padding: const EdgeInsets.all(4),
             child: Text(' Our #AVIOTRACKcovid19Warriors, are striving hard each day, to ensure you stay safe at home while they reach out essentials to you. In this war against the virus, we call for your understanding that there are multiple factors that control movement of shipments across the whole country & within any city. Hence, please expect an extended delivery schedule well beyond our normal TAT.',style: GoogleFonts.notoSans(fontStyle: FontStyle.italic,fontSize: 14)).centered(),
           ),
-        ).pOnly(top: 20,left: 22)
+        ).pOnly(top: 20,left: 22),
+        Container(
+          height: 25,
+          width: 1210,
+          decoration: BoxDecoration(border: Border.all(color: Colors.transparent),color: primary_color,),
+          child:HStack([
+            Text('Terms & Conditions |',style: GoogleFonts.poppins(color: Colors.white,fontSize: 10),).pOnly(left: 10),
+            Text(' Privacy policy',style: GoogleFonts.poppins(color: Colors.white,fontSize: 10),),
+            Text(' © Copyright Appikorn .All rights reserved',style: GoogleFonts.poppins(color: Colors.white,fontSize: 10),).pOnly(left: 800),
+
+          ])
+        ).pOnly(top: 50,left: 20)
       ]).hFull(context),
     ]));
   }
